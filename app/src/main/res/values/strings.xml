@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">UsaidiziHub</string>
+    <string name="usaidizihub_account">UsaidiziHub Account</string>
+    <string name="todo">TODO</string>
+    <string name="signout">Signout</string>
+    <string name="dbnode_users">Users</string>
+    <string name="chat">Chat</string>
+
+    <!-- Intent Extras -->
+    <string name="intent_chatroom">intent_chatroom</string>
+
+    <!-- Dialog Names -->
+    <string name="dialog_change_photo">ChangePhotoDialog</string>
+    <string name="dialog_new_chatroom">NewChatroomDialog</string>
+
+    <!-- Firebase Database Nodes -->
+    <string name="dbnode_chatrooms">chatrooms</string>
+
+    <!-- Firebase Database Fields -->
+    <string name="field_chatroom_name">chatroom_name</string>
+    <string name="field_creator_id">creator_id</string>
+    <string name="field_security_level">security_level</string>
+    <string name="field_email">email</string>
+    <string name="field_name">name</string>
+    <string name="field_phone">phone</string>
+    <string name="field_profile_image">profile_image</string>
+    <string name="field_user_id">user_id</string>
+    <string name="field_chatroom_id">chatroom_id</string>
+    <string name="field_chatroom_messages">chatroom_messages</string>
+    <string name="field_message">message</string>
+    <string name="field_timestamp">timestamp</string>
+    <string name="title_activity_application_settings">ApplicationSettings</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Alert me of all activities that happen in the application
+    </string>
+    <string name="attachment_summary_off">Only send notifications from counselor</string>
+</resources>

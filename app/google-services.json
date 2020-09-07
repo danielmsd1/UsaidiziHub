@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "693906274351",
+    "firebase_url": "https://usaidizihub-1591854837712.firebaseio.com",
+    "project_id": "usaidizihub-1591854837712",
+    "storage_bucket": "usaidizihub-1591854837712.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693906274351:android:f5dfac690985d564edaeda",
+        "android_client_info": {
+          "package_name": "com.simiyu.usaidizihub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "693906274351-v1pste25cd5mcoppelv4id9fljl9m6fr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHf_ZmniHIVSLcHPEXG_P5vZhZc49HDOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "693906274351-v1pste25cd5mcoppelv4id9fljl9m6fr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,38 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="@string/messages_header">
+
+        <EditTextPreference
+            app:key="signature"
+            app:title="Username"
+            app:useSimpleSummaryProvider="true" />
+
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="More">
+
+        <ListPreference
+            app:defaultValue="light"
+            app:entries="@array/themes"
+            app:entryValues="@array/themes"
+            app:key="theme"
+            android:defaultValue="light"
+            app:title="Theme"
+            app:useSimpleSummaryProvider="true" />
+        <SwitchPreferenceCompat
+            app:key="sync"
+            app:title="Allow Notifications" />
+
+        <SwitchPreferenceCompat
+            app:dependency="sync"
+            app:key="attachment"
+            app:summaryOff="@string/attachment_summary_off"
+            app:summaryOn="@string/attachment_summary_on"
+            app:title="Notification Category" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
