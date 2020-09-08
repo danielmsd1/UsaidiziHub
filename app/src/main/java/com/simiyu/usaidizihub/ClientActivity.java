@@ -163,6 +163,8 @@ public class ClientActivity extends AppCompatActivity {
             case R.id.settings:
                 openSettings();
                 return true;
+            case R.id.policy:
+                openLicence();
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -181,6 +183,15 @@ public class ClientActivity extends AppCompatActivity {
      */
     private void openSettings(){
         Intent intent = new Intent(this,ApplicationSettings.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Open MIT open source licence
+     * Counselor application link available here
+     */
+    private void openLicence(){
+        Intent intent = new Intent(this,Policy.class);
         startActivity(intent);
     }
     /*

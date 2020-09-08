@@ -1,17 +1,22 @@
 <resources>
-    <!-- Reply Preference -->
-    <string-array name="reply_entries">
-        <item>Reply</item>
-        <item>Reply to all</item>
-    </string-array>
-
-    <string-array name="reply_values">
-        <item>reply</item>
-        <item>reply_all</item>
-    </string-array>
-
     <string-array name="themes">
         <item>Light</item>
         <item>Dark</item>
     </string-array>
+
+    <!--Areas of counseling-->
+    <string-array name="areasofcounseling">
+        <item>Relationships</item>
+        <item>Low self esteem and confidence</item>
+        <item>Trauma</item>
+        <item>Stress</item>
+        <item>Anger management</item>
+        <item>Addictions</item>
+        <item>Abuse</item>
+        <item>Post Traumatic Stress Disorder(PTSD)</item>
+        <item>Eating disorders</item>
+        <item>Depression</item>
+        <item>Bereavement and loss</item>
+    </string-array>
+
 </resources>

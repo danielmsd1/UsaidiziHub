@@ -140,10 +140,6 @@ public class Registration extends AppCompatActivity {
                                     Toast.makeText(Registration.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                                 }
                             });
-
-//                            FirebaseAuth.getInstance().signOut();
-//                            // TODO: 9/5/2020 Redirect user to login screen
-//                            //redirecttoLoginScreen();
                         }else{
                             Toast.makeText(Registration.this, "Unable to register", Toast.LENGTH_SHORT).show();
                         }

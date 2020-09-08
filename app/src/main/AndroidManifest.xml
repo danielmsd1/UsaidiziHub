@@ -9,17 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".Policy"
+            android:parentActivityName=".ClientActivity"></activity>
+
+        <activity android:name=".UploadDataActivity"
+            android:parentActivityName=".Policy">
+
+        </activity>
+
         <activity
             android:name=".ApplicationSettings"
-            android:parentActivityName=".ClientActivity"
-            android:label="@string/title_activity_application_settings"></activity>
-        <activity android:name=".AdminstratorActivity"></activity>
-        <activity android:name=".CounselorActivity"></activity>
+            android:label="@string/title_activity_application_settings"
+            android:parentActivityName=".ClientActivity" />
+
+        <activity android:name=".AdminstratorActivity" />
+
+        <activity android:name=".CounselorActivity" />
+
         <activity
             android:name=".SettingsActivity"
-            android:parentActivityName=".ClientActivity"></activity>
-        <activity android:name=".Registration">
+            android:parentActivityName=".ClientActivity" />
 
+        <activity android:name=".Registration">
             <!-- Intent filter Registration Activity -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,8 +39,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".Login" />
-        <activity android:name=".ClientActivity" />
+
+        <activity android:name=".ClientActivity">
+
+        </activity>
     </application>
 
 </manifest>

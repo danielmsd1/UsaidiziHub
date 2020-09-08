@@ -26,7 +26,8 @@ public class AdminstratorActivity extends AppCompatActivity {
      * Add counselors
      * */
     public void add_counselors(View view) {
-        Intent intent = new Intent(this, SettingsActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, SettingsActivity.class);
+//        startActivity(intent);
+
     }
 }

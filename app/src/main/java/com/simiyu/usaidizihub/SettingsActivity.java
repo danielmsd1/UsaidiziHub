@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,52 +22,63 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.simiyu.usaidizihub.models.User;
 
 public class SettingsActivity extends AppCompatActivity {
     private static final String TAG = "SettingsActivity";
 
     private static final String DOMAIN_NAME = "strathmore.edu";
+    private static final int REQUEST_CODE = 1234;
+    private static final double MB_THRESHHOLD = 5.0;
+    private static final double MB = 1000000.0;
 
     //firebase
     private FirebaseAuth.AuthStateListener mAuthListener;
 
     //widgets
-    private EditText mEmail, mCurrentPassword;
+    private EditText mEmail, mCurrentPassword,mName, mPhone;
     private Button mSave;
     private ProgressBar mProgressBar;
     private TextView mResetPasswordLink;
+    private ImageView mProfileImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
         Log.d(TAG, "onCreate: started.");
-        mEmail = (EditText) findViewById(R.id.input_email);
-        mCurrentPassword = (EditText) findViewById(R.id.input_password);
-        mSave= (Button) findViewById(R.id.btn_save);
-        mProgressBar = (ProgressBar) findViewById(R.id.progressBar2);
-        mResetPasswordLink = (TextView) findViewById(R.id.change_password);
+        mEmail = findViewById(R.id.input_email);
+        mCurrentPassword = findViewById(R.id.input_password);
+        mSave = findViewById(R.id.btn_save);
+        mProgressBar = findViewById(R.id.progressBar2);
+        mResetPasswordLink = findViewById(R.id.change_password);
+        mName = findViewById(R.id.editTextTextPersonName);
+        mPhone = findViewById(R.id.editTextPhone);
+        mProfileImage = findViewById(R.id.profile_image);
 
         setupFirebaseAuth();
-
+        init();
         setCurrentEmail();
+    }
 
+        private void init(){
+        getUserAccountsData();
         mSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: attempting to save settings.");
 
-                //make sure email and current password fields are filled
-                if(!isEmpty(mEmail.getText().toString())
-                        && !isEmpty(mCurrentPassword.getText().toString())){
-
-                    /*
-                    ------ Change Email Task -----
-                     */
-                    //if the current email doesn't equal what's in the EditText field then attempt
-                    //to edit
-                    if(!FirebaseAuth.getInstance().getCurrentUser().getEmail()
-                            .equals(mEmail.getText().toString())){
+                //see if they changed the email
+                if(!mEmail.getText().toString().equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())){
+                    //make sure email and current password fields are filled
+                    if(!isEmpty(mEmail.getText().toString())
+                            && !isEmpty(mCurrentPassword.getText().toString())){
 
                         //verify that user is changing to a company email address
                         if(isValidDomain(mEmail.getText().toString())){
@@ -76,15 +88,34 @@ public class SettingsActivity extends AppCompatActivity {
                         }
 
                     }else{
-                        Toast.makeText(SettingsActivity.this, "no changes were made", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SettingsActivity.this, "Email and Current Password Fields Must be Filled to Save", Toast.LENGTH_SHORT).show();
                     }
-
-
-                }else{
-                    Toast.makeText(SettingsActivity.this, "Email and Current Password Fields Must be Filled to Save", Toast.LENGTH_SHORT).show();
                 }
+
+                DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+                /*
+                ------ Change Name -----
+                 */
+                if(!mName.getText().toString().equals("")){
+                    reference.child(getString(R.string.dbnode_users))
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                            .child(getString(R.string.field_name))
+                            .setValue(mName.getText().toString());
+                }
+                /*
+                ------ Change Phone Number -----
+                 */
+                if(!mPhone.getText().toString().equals("")){
+                    reference.child(getString(R.string.dbnode_users))
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                            .child(getString(R.string.field_phone))
+                            .setValue(mPhone.getText().toString());
+                }
+
+                Toast.makeText(SettingsActivity.this, "Data saved", Toast.LENGTH_SHORT).show();
             }
         });
+
 
         mResetPasswordLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,10 +128,59 @@ public class SettingsActivity extends AppCompatActivity {
                 sendResetPasswordLink();
             }
         });
-
-
-
         hideSoftKeyboard();
+    }
+
+    private void getUserAccountsData(){
+        Log.d(TAG, "getUserAccountsData: Getting user accounts data");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+
+        //query method 1
+        Query query1 = reference.child(getString(R.string.dbnode_users))
+                .orderByKey()
+                .equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+        query1.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot singlesnapshot: dataSnapshot.getChildren()){
+                    User user = singlesnapshot.getValue(User.class);
+                    Log.d(TAG, "onDataChange: Query method 1 found user "+user.toString());
+
+                    mName.setText(user.getName());
+                    mPhone.setText(user.getPhone());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        //query method 2
+        Query query2 = reference.child(getString(R.string.dbnode_users))
+                .orderByChild(getString(R.string.field_user_id))
+                .equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+        query2.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot singlesnapshot: dataSnapshot.getChildren()){
+                    User user = singlesnapshot.getValue(User.class);
+                    Log.d(TAG, "onDataChange: Query method 2 found user "+user.toString());
+
+                    mName.setText(user.getName());
+                    mPhone.setText(user.getPhone());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        mEmail.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
     }
 
     private void sendResetPasswordLink(){
@@ -124,12 +204,8 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void editUserEmail(){
-        // Get auth credentials from the user for re-authentication. The example below shows
-        // email and password credentials but there are multiple possible providers,
-        // such as GoogleAuthProvider or FacebookAuthProvider.
-
-        showDialog();
-
+//        showDialog();
+//
 //        AuthCredential credential = EmailAuthProvider
 //                .getCredential(FirebaseAuth.getInstance().getCurrentUser().getEmail(), mCurrentPassword.getText().toString());
 //        Log.d(TAG, "editUserEmail: reauthenticating with:  \n email " + FirebaseAuth.getInstance().getCurrentUser().getEmail()
@@ -189,7 +265,6 @@ public class SettingsActivity extends AppCompatActivity {
 //                                                                    }
 //                                                                });
 //
-//
 //                                                    }
 //
 //                                                }
@@ -203,7 +278,7 @@ public class SettingsActivity extends AppCompatActivity {
 //                                            }
 //                                        });
 //                            }else{
-//                                Toast.makeText(SettingsActivity.this, "you must use a company email", Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(SettingsActivity.this, "you must use a school email", Toast.LENGTH_SHORT).show();
 //                            }
 //
 //                        }else{
