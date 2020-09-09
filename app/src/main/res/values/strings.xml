@@ -52,4 +52,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <string name="counselor_account">
         An application for the counselor position takes 12 hours to process. The application can then either be accepted or rejected after thorough review by the relevant authority. The hiring process is equal for everyone regardless of the gender, complexion and other factors that are discriminatory in nature.
     </string>
+
+    <string name="dialog_delete_chatroom">Delete Chatroom</string>
 </resources>

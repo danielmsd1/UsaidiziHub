@@ -25,6 +25,9 @@ import io.kommunicate.KmConversationBuilder;
 import io.kommunicate.Kommunicate;
 import io.kommunicate.callbacks.KmCallback;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.simiyu.usaidizihub.utility.UniversalImageLoader;
+
 public class ClientActivity extends AppCompatActivity {
 
     private static final String TAG = "SignedInActivity";
@@ -51,9 +54,17 @@ public class ClientActivity extends AppCompatActivity {
         Kommunicate.init(this,APP_ID);
 
         setupFirebaseAuth();
+        initImageLoader();
 
         //getUserDetails();
         setUserDetails();
+    }
+    /**
+     * init universal image loader
+     */
+    private void initImageLoader(){
+        UniversalImageLoader imageLoader = new UniversalImageLoader(ClientActivity.this);
+        ImageLoader.getInstance().init(imageLoader.getConfig());
     }
     /***
      * Set user details
@@ -316,4 +327,9 @@ public class ClientActivity extends AppCompatActivity {
     }
 
 
+    public void openChatroom(View view) {
+        Intent intent;
+        intent = new Intent(this, ChatActivity.class);
+        startActivity(intent);
+    }
 }

@@ -48,7 +48,8 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
     //swipe refresh layout: androidx implementation
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
-
+    //universal image loader
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
 
 }
 apply plugin: 'com.google.gms.google-services'
