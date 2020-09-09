@@ -29,7 +29,7 @@
                 android:id="@+id/creator_name"
                 android:layout_toRightOf="@id/profile_image"
                 android:layout_toLeftOf="@+id/icon_trash"
-                android:textColor="@android:color/holo_orange_dark"
+                android:textColor="@android:color/holo_blue_light"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="20dp"
                 android:layout_centerVertical="true"

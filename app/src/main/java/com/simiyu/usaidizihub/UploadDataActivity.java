@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,6 +18,9 @@ import com.simiyu.usaidizihub.models.User;
 public class UploadDataActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private String TAG = "UploadDataActivity";
+
+    //widgets
+    private ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,8 @@ public class UploadDataActivity extends AppCompatActivity implements AdapterView
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+
+        mProgressBar = findViewById(R.id.progressBar);
     }
 
     @Override
@@ -44,5 +50,27 @@ public class UploadDataActivity extends AppCompatActivity implements AdapterView
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
         // Another interface callback
+    }
+    /**
+     * Progress bar implementations
+     * */
+    private void showDialog(){
+        mProgressBar.setVisibility(View.VISIBLE);
+
+    }
+
+    private void hideDialog(){
+        if(mProgressBar.getVisibility() == View.VISIBLE){
+            mProgressBar.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    /**
+     *Allow Counselor to upload files
+     * @param view
+     */
+    public void selectFiles(View view) {
+
+
     }
 }

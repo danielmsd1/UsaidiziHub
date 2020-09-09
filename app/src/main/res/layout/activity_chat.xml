@@ -25,7 +25,7 @@
         app:fabSize="normal"
         app:elevation="10dp"
         app:backgroundTint="@android:color/holo_blue_dark"
-        android:src="@drawable/ic_baseline_chat_bubble_24"
+        android:src="@drawable/ic_baseline_add_24"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:id="@+id/fob"/>

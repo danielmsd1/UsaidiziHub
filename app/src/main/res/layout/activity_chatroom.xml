@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/chat_received_drawable">
+            android:background="?attr/colorControlNormal">
 
             <ImageView
                 android:layout_width="40dp"
@@ -69,7 +69,7 @@
                 android:gravity="center_vertical"
                 android:textSize="14sp"
                 android:hint="new message..."
-                android:textColor="@android:color/black"
+                android:textColor="?android:attr/textColorPrimary"
                 android:layout_marginLeft="5dp"/>
 
 
