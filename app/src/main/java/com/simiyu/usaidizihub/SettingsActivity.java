@@ -27,8 +27,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -142,7 +140,7 @@ public class SettingsActivity extends AppCompatActivity implements
                         Toast.makeText(SettingsActivity.this, "Email and Current Password Fields Must be Filled to Save", Toast.LENGTH_SHORT).show();
                     }
                 }
-
+                // TODO: 9/10/2020 Change message username from settings 
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
                 /*
                 ------ Change Name -----
@@ -230,7 +228,7 @@ public class SettingsActivity extends AppCompatActivity implements
          */
         Log.d(TAG, "uploadNewPhoto: uploading new profile photo to firebase storage.");
 
-        //Only accept image sizes that are compressed to under 5MB. If thats not possible
+        //Only accept image sizes that are compressed to under 5MB. If that's not possible
         //then do not allow image to be uploaded
         BackgroundImageResize resize = new BackgroundImageResize(imageBitmap);
         Uri uri = null;
@@ -331,14 +329,16 @@ public class SettingsActivity extends AppCompatActivity implements
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     //Now insert the download url into the firebase database
-                    //Uri firebaseURL = taskSnapshot.getDownloadUrl();
+                    // TODO: 9/10/2020 Image url
                     Task<Uri> firebaseURL = taskSnapshot.getStorage().getDownloadUrl();
+
                     Toast.makeText(SettingsActivity.this, "Upload Success", Toast.LENGTH_SHORT).show();
-                    Log.d(TAG, "onSuccess: firebase download url : " + firebaseURL.toString());
+                    Log.d(TAG, "onSuccess: firebase download url : " +firebaseURL.toString());
                     FirebaseDatabase.getInstance().getReference()
                             .child(getString(R.string.dbnode_users))
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .child(getString(R.string.field_profile_image))
+                            //.setValue(generatedFilePath);
                             .setValue(firebaseURL.toString());
 
                     hideDialog();

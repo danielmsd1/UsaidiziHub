@@ -54,4 +54,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     </string>
 
     <string name="dialog_delete_chatroom">Delete Chatroom</string>
+
+    <string name="channel_name">Usaidizihub Chatroom</string>
+    <string name="channel_description">new message</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

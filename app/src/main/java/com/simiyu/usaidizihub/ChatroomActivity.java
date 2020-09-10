@@ -3,8 +3,14 @@ package com.simiyu.usaidizihub;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,6 +45,11 @@ public class ChatroomActivity extends AppCompatActivity {
 
     private static final String TAG = "ChatroomActivity";
 
+    //notification constants
+    private static final String CHANNEL_ID = "usaidizi_hub";
+    private static final String CHANNEL_NAME = "UsaidiziHub";
+    private static final String CHANNEL_DESC = "UsaidiziHub notifications";
+
     //firebase
     private FirebaseAuth.AuthStateListener mAuthListener;
     private DatabaseReference mMessagesReference;
@@ -59,10 +70,21 @@ public class ChatroomActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chatroom);
-        mChatroomName = (TextView) findViewById(R.id.text_chatroom_name);
-        mListView = (ListView) findViewById(R.id.listView);
-        mMessage = (EditText) findViewById(R.id.input_message);
-        mCheckmark = (ImageView) findViewById(R.id.checkmark);
+
+        /**
+         * Create notification channel
+         */
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID,CHANNEL_NAME,NotificationManager.IMPORTANCE_DEFAULT);
+            channel.setDescription(CHANNEL_DESC);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+
+        mChatroomName = findViewById(R.id.text_chatroom_name);
+        mListView = findViewById(R.id.listView);
+        mMessage = findViewById(R.id.input_message);
+        mCheckmark = findViewById(R.id.checkmark);
         getSupportActionBar().hide();
         Log.d(TAG, "onCreate: started.");
         mMessagesList = new ArrayList<>();
@@ -112,8 +134,6 @@ public class ChatroomActivity extends AppCompatActivity {
 
                     //clear the EditText
                     mMessage.setText("");
-
-                    //refresh the messages list? Or is it done by the listener??
                 }
 
             }
@@ -159,8 +179,15 @@ public class ChatroomActivity extends AppCompatActivity {
                     try {//need to catch null pointer here because the initial welcome message to the
                         //chatroom has no user id
                         ChatMessage message = new ChatMessage();
+
                         String userId = snapshot.getValue(ChatMessage.class).getUser_id();
                         if(userId != null){ //check and make sure it's not the first message (has no user id)
+
+                            /**
+                             * Notification with message
+                             */
+                            String mymessage = snapshot.getValue(ChatMessage.class).getMessage();
+                            displayNotifications(mymessage);
                             message.setMessage(snapshot.getValue(ChatMessage.class).getMessage());
                             message.setUser_id(snapshot.getValue(ChatMessage.class).getUser_id());
                             message.setTimestamp(snapshot.getValue(ChatMessage.class).getTimestamp());
@@ -185,6 +212,28 @@ public class ChatroomActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    /**
+     * display notification with new message
+     * onClick intent: open Activity
+     */
+    private void displayNotifications(String message)
+    {
+
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(this,CHANNEL_ID)
+                .setSmallIcon(R.drawable.usaidizihublogo)
+                .setContentTitle("New group message")
+                .setContentText(message)
+                .setAllowSystemGeneratedContextualActions(true)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        mBuilder.setOnlyAlertOnce(true);
+        mBuilder.setColor(Color.BLUE);
+
+        NotificationManagerCompat mnotifmgr = NotificationManagerCompat.from(this);
+        mnotifmgr.notify(1,mBuilder.build());
+
     }
 
     private void getUserDetails(){
