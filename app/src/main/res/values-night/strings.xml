@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">UsaidiziHub</string>
+    <string name="usaidizihub_account">UsaidiziHub Account</string>
+    <string name="todo">TODO</string>
+    <string name="signout">Signout</string>
+    <string name="chat">Chat</string>
+
+    <!-- Intent Extras -->
+    <string name="intent_chatroom">intent_chatroom</string>
+
+    <!-- Dialog Names -->
+    <string name="dialog_change_photo">ChangePhotoDialog</string>
+    <string name="dialog_new_chatroom">NewChatroomDialog</string>
+
+    <!-- Firebase Database Nodes -->
+    <string name="dbnode_chatrooms">chatrooms</string>
+    <string name="dbnode_users">users</string>
+
+    <!-- Firebase Database Fields -->
+    <string name="field_chatroom_name">chatroom_name</string>
+    <string name="field_creator_id">creator_id</string>
+    <string name="field_security_level">security_level</string>
+    <string name="field_email">email</string>
+    <string name="field_name">name</string>
+    <string name="field_phone">phone</string>
+    <string name="field_profile_image">profile_image</string>
+    <string name="field_user_id">user_id</string>
+    <string name="field_chatroom_id">chatroom_id</string>
+    <string name="field_chatroom_messages">chatroom_messages</string>
+    <string name="field_message">message</string>
+    <string name="field_timestamp">timestamp</string>
+    <string name="title_activity_application_settings">ApplicationSettings</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Sync Preferences -->
+    <string name="attachment_summary_on">Alert me of all activities that happen in the application
+    </string>
+    <string name="attachment_summary_off">Only send notifications from counselor</string>
+
+
+    <string name="attach_documents">Attach all academic and relevant documents below</string>
+
+    <string name="licence">
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    </string>
+
+    <string name="counselor_account">
+        An application for the counselor position takes 12 hours to process. The application can then either be accepted or rejected after thorough review by the relevant authority. The hiring process is equal for everyone regardless of the gender, complexion and other factors that are discriminatory in nature.
+    </string>
+
+    <string name="dialog_delete_chatroom">Delete Chatroom</string>
+</resources>
