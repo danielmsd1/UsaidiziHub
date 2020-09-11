@@ -49,6 +49,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Policies"
+        android:textColor="@color/mainText"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
@@ -74,25 +76,28 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Counselor Account"
-                android:textStyle="bold"
+                android:layout_height="33dp"
                 android:gravity="center"
-                android:textSize="17dp"
-                android:textAlignment="center"/>
+                android:text="Counselor Account"
+                android:textAlignment="center"
+                android:textColor="@color/mainText"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="164dp"
                 android:text="@string/counselor_account"
-                android:textSize="17dp"/>
+                android:textColor="@color/mainText"
+                android:textSize="17dp" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Add application"
+                android:background="@color/lightPurple"
                 android:onClick="uploaddata"
-                />
+                android:text="Add application"
+                android:textColor="@color/mainText" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

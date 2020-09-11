@@ -35,6 +35,7 @@
         android:clickable="true"
         android:onClick="fabMore"
         android:src="@drawable/ic_baseline_menu_24"
+        app:backgroundTint="@color/lightPurple"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline3" />
 
@@ -50,7 +51,8 @@
         app:layout_constraintCircleAngle="330"
         app:layout_constraintCircleRadius="100dp"
         tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="559dp" />
+        tools:layout_editor_absoluteY="559dp"
+        tools:ignore="MissingConstraints" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabchatbot"
@@ -64,7 +66,8 @@
         app:layout_constraintCircleAngle="270"
         app:layout_constraintCircleRadius="100dp"
         tools:layout_editor_absoluteX="242dp"
-        tools:layout_editor_absoluteY="625dp" />
+        tools:layout_editor_absoluteY="625dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -98,11 +101,11 @@
         android:id="@+id/mycategory"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="28dp"
         android:gravity="center"
         android:text="Student Module"
         android:textColor="@color/mainText"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
@@ -132,62 +135,66 @@
             >
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
                 android:id="@+id/available_counselors"
-                android:text="Available\ncounselors"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="50"
+                android:layout_gravity="fill_horizontal"
+                android:background="@color/lightPurple"
+                android:fontFamily="@font/raleway_semibold"
                 android:onClick="openAvailableCounselors"
-                android:layout_row="0"
-                android:layout_rowWeight="1"
-                android:layout_column="0"
-                android:layout_columnWeight="50"
-                android:layout_gravity="fill_horizontal"
-                android:fontFamily="@font/raleway_semibold"
+                android:text="Available\ncounselors"
                 android:textColor="@color/mainText"
                 android:textSize="18sp" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
                 android:id="@+id/progress_report"
-                android:text="Progress\nreport"
-                android:onClick="openClientProgress"
-                android:layout_gravity="fill_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
                 android:layout_row="0"
                 android:layout_rowWeight="1"
                 android:layout_column="1"
                 android:layout_columnWeight="50"
+                android:layout_gravity="fill_horizontal"
+                android:background="@color/lightPurple"
                 android:fontFamily="@font/raleway_semibold"
+                android:onClick="openClientProgress"
+                android:text="Progress\nreport"
                 android:textColor="@color/mainText"
                 android:textSize="18sp" />
 
             <Button
+                android:id="@+id/all_counselors"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
-                android:id="@+id/all_counselors"
-                android:layout_columnWeight="50"
-                android:text="Usaidizihub\ncounselors"
-                android:layout_gravity="fill_horizontal"
-                android:onClick="openAllCounselors"
                 android:layout_row="1"
                 android:layout_rowWeight="1"
                 android:layout_column="0"
+                android:layout_columnWeight="50"
+                android:layout_gravity="fill_horizontal"
+                android:background="@color/lightPurple"
                 android:fontFamily="@font/raleway_semibold"
+                android:onClick="openAllCounselors"
+                android:text="Usaidizihub\ncounselors"
                 android:textColor="@color/mainText"
                 android:textSize="18sp" />
 
             <Button
+                android:id="@+id/chatroom"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
-                android:layout_gravity="fill_horizontal"
-                android:id="@+id/chatroom"
-                android:text="Chatroom"
-                android:onClick="openChatroom"
                 android:layout_row="1"
                 android:layout_rowWeight="1"
                 android:layout_column="1"
                 android:layout_columnWeight="50"
+                android:layout_gravity="fill_horizontal"
+                android:background="@color/lightPurple"
                 android:fontFamily="@font/raleway_semibold"
+                android:onClick="openChatroom"
+                android:text="Chatroom"
                 android:textColor="@color/mainText"
                 android:textSize="18sp"
                 tools:ignore="OnClick" />

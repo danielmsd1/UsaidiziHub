@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:padding="10dp" android:layout_height="wrap_content" android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:layout_height="40dp" android:layout_width="match_parent" android:gravity="center_vertical" android:id="@+id/dialogChoosePhoto" android:textColor="@android:color/black" android:textSize="15sp" android:text="Choose photo from memory"/>
-    <TextView android:layout_height="40dp" android:layout_width="match_parent" android:gravity="center_vertical" android:id="@+id/dialogOpenCamera" android:textColor="@android:color/black" android:textSize="15sp" android:text="Take a Photo" android:layout_below="@+id/dialogChoosePhoto"/>
+
+    <TextView
+        android:id="@+id/dialogChoosePhoto"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="Choose photo from memory"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/dialogOpenCamera"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/dialogChoosePhoto"
+        android:gravity="center_vertical"
+        android:text="Take a Photo"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
 </RelativeLayout>

@@ -33,15 +33,18 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:src="@drawable/ic_baseline_menu_24"
+        app:backgroundTint="@color/lightPurple"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline3" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="127dp"
-        android:layout_height="112dp"
+        android:layout_width="129dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="28dp"
         android:src="@drawable/usaidizihublogo"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,15 +63,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.28" />
 
     <TextView
         android:id="@+id/mycategory"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:gravity="center"
         android:text="Counselor Module"
+        android:textColor="@color/mainText"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -93,48 +100,64 @@
             >
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
                 android:id="@+id/available_counselors"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="50"
+                android:layout_gravity="fill_horizontal"
+                android:background="@color/lightPurple"
+                android:fontFamily="@font/raleway_semibold"
                 android:text="Available\nstudents"
-                android:layout_row="0"
-                android:layout_columnWeight="50"
-                android:layout_gravity="fill_horizontal"
-                android:layout_column="0"
-                android:layout_rowWeight="1"/>
+                android:textColor="@color/mainText"
+                android:textSize="18sp" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
                 android:id="@+id/progress_report"
-                android:text="Progress\nreports"
-                android:layout_gravity="fill_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
                 android:layout_row="0"
-                android:layout_columnWeight="50"
+                android:layout_rowWeight="1"
                 android:layout_column="1"
-                android:layout_rowWeight="1"/>
+                android:layout_columnWeight="50"
+                android:layout_gravity="fill_horizontal"
+                android:background="@color/lightPurple"
+                android:fontFamily="@font/raleway_semibold"
+                android:text="Progress\nreports"
+                android:textColor="@color/mainText"
+                android:textSize="18sp" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
                 android:id="@+id/all_requests"
-                android:layout_columnWeight="50"
-                android:text="Requests"
-                android:layout_gravity="fill_horizontal"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:layout_rowWeight="1"/>
-
-            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
-                android:layout_gravity="fill_horizontal"
-                android:id="@+id/chatroom"
-                android:text="Chatroom"
                 android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
                 android:layout_columnWeight="50"
+                android:layout_gravity="fill_horizontal"
+                android:background="@color/lightPurple"
+                android:fontFamily="@font/raleway_semibold"
+                android:text="Requests"
+                android:textColor="@color/mainText"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/chatroom"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
                 android:layout_column="1"
-                android:layout_rowWeight="1"/>
+                android:layout_columnWeight="50"
+                android:layout_gravity="fill_horizontal"
+                android:background="@color/lightPurple"
+                android:fontFamily="@font/raleway_semibold"
+                android:text="Chatroom"
+                android:textColor="@color/mainText"
+                android:textSize="18sp" />
         </GridLayout>
 
 

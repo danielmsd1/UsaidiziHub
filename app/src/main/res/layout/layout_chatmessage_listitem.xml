@@ -13,12 +13,11 @@
         android:layout_centerVertical="true">
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
             android:id="@+id/profile_image"
+            android:layout_width="293dp"
+            android:layout_height="189dp"
             android:scaleType="centerCrop"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/usaidizihublogo"/>
+            android:src="@drawable/usaidizihublogo" />
 
         <TextView
             android:layout_width="wrap_content"

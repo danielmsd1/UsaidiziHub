@@ -11,19 +11,19 @@
         >
 
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:id="@+id/toolbar"
-            android:background="@android:color/holo_blue_dark"
+            android:background="@color/lightPurple"
             android:elevation="10dp">
 
             <TextView
+                android:id="@+id/text_chatroom_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:textColor="@android:color/white"
-                android:textSize="17sp"
-                android:id="@+id/text_chatroom_name"/>
+                android:textSize="17sp" />
 
         </com.google.android.material.appbar.MaterialToolbar>
 
