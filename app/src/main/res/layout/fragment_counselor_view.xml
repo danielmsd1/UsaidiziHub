@@ -14,23 +14,25 @@
         android:background="@drawable/nick" />
 
     <TextView
-        android:layout_width="match_parent"
         android:id="@+id/counselorname"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
         android:text="Prof. Nick"
         android:textAlignment="center"
-        android:gravity="center"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"/>
+        android:textColor="@color/mainText"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatRatingBar
         android:id="@+id/ratingbar"
         android:layout_width="190dp"
-        android:rating="5"
-        android:isIndicator="true"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
-        android:layout_marginBottom="0dp"/>
+        android:layout_marginBottom="0dp"
+        android:background="@color/mainBackground"
+        android:isIndicator="true"
+        android:rating="5" />
 
 </FrameLayout>

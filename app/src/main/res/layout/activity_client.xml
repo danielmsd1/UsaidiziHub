@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/mainBackground"
     tools:context=".ClientActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -34,6 +35,7 @@
         android:clickable="true"
         android:onClick="fabMore"
         android:src="@drawable/ic_baseline_menu_24"
+        app:backgroundTint="@color/lightPurple"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline3" />
 
@@ -42,14 +44,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
+        android:onClick="openProfile"
         android:src="@drawable/ic_baseline_person_24"
         android:visibility="gone"
-        android:onClick="openProfile"
         app:layout_constraintCircle="@id/fabmore"
         app:layout_constraintCircleAngle="330"
         app:layout_constraintCircleRadius="100dp"
         tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="559dp" />
+        tools:layout_editor_absoluteY="559dp"
+        tools:ignore="MissingConstraints" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabchatbot"
@@ -63,14 +66,17 @@
         app:layout_constraintCircleAngle="270"
         app:layout_constraintCircleRadius="100dp"
         tools:layout_editor_absoluteX="242dp"
-        tools:layout_editor_absoluteY="625dp" />
+        tools:layout_editor_absoluteY="625dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="127dp"
-        android:layout_height="112dp"
+        android:layout_width="131dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="56dp"
         android:src="@drawable/usaidizihublogo"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -95,19 +101,26 @@
         android:id="@+id/mycategory"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:gravity="center"
         android:text="Student Module"
+        android:textColor="@color/mainText"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/scrollView3"
+        android:layout_width="396dp"
+        android:layout_height="329dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline6">
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintVertical_bias="0.318">
 
         <GridLayout
             android:layout_width="fill_parent"
@@ -122,56 +135,88 @@
             >
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
                 android:id="@+id/available_counselors"
-                android:text="Available\ncounselors"
-                android:onClick="openAvailableCounselors"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
                 android:layout_row="0"
-                android:layout_columnWeight="50"
-                android:layout_gravity="fill_horizontal"
-                android:layout_column="0"
-                android:layout_rowWeight="1"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:id="@+id/progress_report"
-                android:text="Progress\nreport"
-                android:onClick="openClientProgress"
-                android:layout_gravity="fill_horizontal"
-                android:layout_row="0"
-                android:layout_columnWeight="50"
-                android:layout_column="1"
-                android:layout_rowWeight="1"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:id="@+id/all_counselors"
-                android:layout_columnWeight="50"
-                android:text="Usaidizihub\ncounselors"
-                android:layout_gravity="fill_horizontal"
-                android:onClick="openAllCounselors"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:layout_rowWeight="1"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:layout_gravity="fill_horizontal"
-                android:id="@+id/chatroom"
-                android:text="Chatroom"
-                android:onClick="openChatroom"
-                android:layout_row="1"
-                android:layout_columnWeight="50"
-                android:layout_column="1"
                 android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="50"
+                android:layout_gravity="fill_horizontal"
+                android:background="@color/lightPurple"
+                android:fontFamily="@font/raleway_semibold"
+                android:onClick="openAvailableCounselors"
+                android:text="Available\ncounselors"
+                android:textColor="@color/mainText"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/progress_report"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="50"
+                android:layout_gravity="fill_horizontal"
+                android:background="@color/lightPurple"
+                android:fontFamily="@font/raleway_semibold"
+                android:onClick="openClientProgress"
+                android:text="Progress\nreport"
+                android:textColor="@color/mainText"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/all_counselors"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="50"
+                android:layout_gravity="fill_horizontal"
+                android:background="@color/lightPurple"
+                android:fontFamily="@font/raleway_semibold"
+                android:onClick="openAllCounselors"
+                android:text="Usaidizihub\ncounselors"
+                android:textColor="@color/mainText"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/chatroom"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="50"
+                android:layout_gravity="fill_horizontal"
+                android:background="@color/lightPurple"
+                android:fontFamily="@font/raleway_semibold"
+                android:onClick="openChatroom"
+                android:text="Chatroom"
+                android:textColor="@color/mainText"
+                android:textSize="18sp"
                 tools:ignore="OnClick" />
         </GridLayout>
 
 
     </ScrollView>
+
+    <Button
+        android:id="@+id/switch_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/state_switch"
+        android:fontFamily="@font/raleway_semibold"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:text="Enable Dark Mode"
+        android:textAllCaps="false"
+        android:textColor="@color/mainBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

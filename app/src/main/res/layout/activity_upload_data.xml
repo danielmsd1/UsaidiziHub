@@ -13,7 +13,8 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="Counselor Application Form"
-        android:textSize="20sp"
+        android:textColor="@color/mainText"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,6 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/attach_documents"
+        android:textColor="@color/mainText"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -80,19 +82,25 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
         android:layout_marginTop="8dp"
+        android:background="@color/lightPurple"
         android:text="Apply"
+        android:textColor="@color/mainText"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="124dp"
+        android:layout_height="45dp"
         android:layout_marginTop="8dp"
+        android:background="@color/lightPurple"
         android:text="Back Home"
+        android:textColor="@color/mainText"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -101,7 +109,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Select your area of specialization"
-        android:textSize="16sp"
+        android:textColor="@color/mainText"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline"

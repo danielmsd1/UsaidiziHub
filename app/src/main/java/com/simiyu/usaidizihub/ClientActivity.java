@@ -36,7 +36,7 @@ public class ClientActivity extends AppCompatActivity {
 
     //Firebase
     private FirebaseAuth.AuthStateListener mAuthListener;
-
+ 
     //widgets
     private ProgressBar mProgressBar;
     private FloatingActionButton ftext,fprofile,fmenu;
@@ -44,11 +44,42 @@ public class ClientActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client);
+
+/*
+ val appSettingPrefs: SharedPreferences = getSharedPreferences("AppSettingPrefs", 0)
+        val sharedPrefsEdit: SharedPreferences.Editor = appSettingPrefs.edit()
+        val isNightModeOn: Boolean = appSettingPrefs.getBoolean("NightMode", false)
+
+        if(isNightModeOn){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            switch_btn.text = "Disable Dark Mode"
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            switch_btn.text = "Enable Dark Mode"
+        }
+
+        switch_btn.setOnClickListener(View.OnClickListener {
+            if(isNightModeOn){
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                sharedPrefsEdit.putBoolean("NightMode", false)
+                sharedPrefsEdit.apply()
+
+                switch_btn.text = "Enable Dark Mode"
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                sharedPrefsEdit.putBoolean("NightMode", true)
+                sharedPrefsEdit.apply()
+
+                switch_btn.text = "Disable Dark Mode"
+            }
+        })
+ */
         //initialize views
         mProgressBar =  findViewById(R.id.progressBar2);
         ftext = findViewById(R.id.fabchatbot);
         fprofile = findViewById(R.id.fabprofile);
         fmenu = findViewById(R.id.fabmore);
+
 
         //Initialization of Kommunicate SDK
         Kommunicate.init(this,APP_ID);

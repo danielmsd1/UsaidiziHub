@@ -11,8 +11,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/raleway_semibold"
         android:gravity="center"
         android:text="UsaidiziHub Counselors"
+        android:textColor="@color/mainText"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,12 +56,14 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/titleofspec"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_semibold"
                 android:text="Need help with depression?"
+                android:textColor="@color/mainText"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                android:id="@+id/titleofspec"/>
+                android:textStyle="bold" />
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -100,12 +104,14 @@
             </HorizontalScrollView>
 
             <TextView
+                android:id="@+id/titleofspec2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_semibold"
                 android:text="Need help with addictions?"
+                android:textColor="@color/mainText"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                android:id="@+id/titleofspec2"/>
+                android:textStyle="bold" />
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -146,14 +152,15 @@
             </HorizontalScrollView>
 
 
-
             <TextView
+                android:id="@+id/titleofspec3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_semibold"
                 android:text="Need help with Stress?"
+                android:textColor="@color/mainText"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                android:id="@+id/titleofspec3"/>
+                android:textStyle="bold" />
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -194,12 +201,14 @@
             </HorizontalScrollView>
 
             <TextView
+                android:id="@+id/titleofspec4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_semibold"
                 android:text="Need help with Loss or bereavement?"
+                android:textColor="@color/mainText"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                android:id="@+id/titleofspec4"/>
+                android:textStyle="bold" />
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
