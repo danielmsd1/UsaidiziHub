@@ -72,7 +72,6 @@
                 android:textColor="?android:attr/textColorPrimary"
                 android:layout_marginLeft="5dp"/>
 
-
         </RelativeLayout>
 
     </RelativeLayout>

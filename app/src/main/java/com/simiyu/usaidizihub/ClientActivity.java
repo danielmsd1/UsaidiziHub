@@ -229,7 +229,7 @@ public class ClientActivity extends AppCompatActivity {
     }
 
     /**
-     * Open MIT open source licence
+     * Open Policies
      * Counselor application link available here
      */
     private void openLicence(){
@@ -361,6 +361,21 @@ public class ClientActivity extends AppCompatActivity {
     public void openChatroom(View view) {
         Intent intent;
         intent = new Intent(this, ChatActivity.class);
+        startActivity(intent);
+    }
+
+    public void openAvailableCounselors(View view) {
+        Intent intent = new Intent(this,AvailableCounselors.class);
+        startActivity(intent);
+    }
+
+    public void openAllCounselors(View view) {
+        Intent intent = new Intent(this,AllCounselors.class);
+        startActivity(intent);
+    }
+
+    public void openClientProgress(View view) {
+        Intent intent = new Intent(this,ClientProgress.class);
         startActivity(intent);
     }
 }

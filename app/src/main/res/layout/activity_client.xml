@@ -57,9 +57,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:onClick="openChatbot"
         android:src="@drawable/ic_baseline_chat_bubble_24"
         android:visibility="gone"
+        android:onClick="openChatbot"
         app:layout_constraintCircle="@id/fabmore"
         app:layout_constraintCircleAngle="270"
         app:layout_constraintCircleRadius="100dp"
@@ -120,70 +120,74 @@
         app:layout_constraintVertical_bias="0.318">
 
         <GridLayout
-            android:id="@+id/choice_grid"
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
+            android:id="@+id/choice_grid"
             android:layout_centerHorizontal="true"
+            android:padding="4dp"
             android:alignmentMode="alignBounds"
             android:columnCount="2"
-            android:padding="4dp"
             android:rowOrderPreserved="false"
-            android:useDefaultMargins="true">
+            android:useDefaultMargins="true"
+            >
 
             <Button
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
                 android:id="@+id/available_counselors"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:layout_row="0"
-                android:layout_rowWeight="1"
-                android:layout_column="0"
-                android:layout_columnWeight="50"
-                android:layout_gravity="fill_horizontal"
-                android:fontFamily="@font/raleway_semibold"
                 android:text="Available\ncounselors"
-                android:textColor="@color/mainText"
-                android:textSize="18sp" />
-
-            <Button
-                android:id="@+id/progress_report"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
+                android:onClick="openAvailableCounselors"
                 android:layout_row="0"
-                android:layout_rowWeight="1"
-                android:layout_column="1"
-                android:layout_columnWeight="50"
-                android:layout_gravity="fill_horizontal"
-                android:fontFamily="@font/raleway_semibold"
-                android:text="Progress\nreport"
-                android:textColor="@color/mainText"
-                android:textSize="18sp" />
-
-            <Button
-                android:id="@+id/all_counselors"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:layout_row="1"
                 android:layout_rowWeight="1"
                 android:layout_column="0"
                 android:layout_columnWeight="50"
                 android:layout_gravity="fill_horizontal"
                 android:fontFamily="@font/raleway_semibold"
-                android:text="Usaidizihub\ncounselors"
                 android:textColor="@color/mainText"
                 android:textSize="18sp" />
 
             <Button
-                android:id="@+id/chatroom"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
+                android:id="@+id/progress_report"
+                android:text="Progress\nreport"
+                android:onClick="openClientProgress"
+                android:layout_gravity="fill_horizontal"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="50"
+                android:fontFamily="@font/raleway_semibold"
+                android:textColor="@color/mainText"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/all_counselors"
+                android:layout_columnWeight="50"
+                android:text="Usaidizihub\ncounselors"
+                android:layout_gravity="fill_horizontal"
+                android:onClick="openAllCounselors"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:fontFamily="@font/raleway_semibold"
+                android:textColor="@color/mainText"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_gravity="fill_horizontal"
+                android:id="@+id/chatroom"
+                android:text="Chatroom"
+                android:onClick="openChatroom"
                 android:layout_row="1"
                 android:layout_rowWeight="1"
                 android:layout_column="1"
                 android:layout_columnWeight="50"
-                android:layout_gravity="fill_horizontal"
                 android:fontFamily="@font/raleway_semibold"
-                android:onClick="openChatroom"
-                android:text="Chatroom"
                 android:textColor="@color/mainText"
                 android:textSize="18sp"
                 tools:ignore="OnClick" />

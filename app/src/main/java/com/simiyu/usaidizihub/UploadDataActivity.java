@@ -2,6 +2,8 @@ package com.simiyu.usaidizihub;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,15 +11,22 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.Switch;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.simiyu.usaidizihub.models.User;
 
 public class UploadDataActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private String TAG = "UploadDataActivity";
+
+    private int PICKFILE_RESULT_CODE = 12334;
 
     //widgets
     private ProgressBar mProgressBar;
@@ -43,7 +52,10 @@ public class UploadDataActivity extends AppCompatActivity implements AdapterView
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         // An item was selected. You can retrieve the selected item using
-        // parent.getItemAtPosition(pos)
+        //parent.getItemAtPosition(pos)
+        if (adapterView.getOnItemSelectedListener()!= null){
+            Toast.makeText(this, "Selected Category: "+adapterView.getItemAtPosition(i), Toast.LENGTH_SHORT).show();
+        }
         Log.d(TAG, "onItemSelected: An item has been selected!");
     }
 
@@ -70,7 +82,14 @@ public class UploadDataActivity extends AppCompatActivity implements AdapterView
      * @param view
      */
     public void selectFiles(View view) {
+        uploadFile();
+    }
+    public void uploadFile()
+    {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("file/*");
+        startActivityForResult(intent, PICKFILE_RESULT_CODE);
 
-
+        Toast.makeText(this, "Enter file to upload", Toast.LENGTH_SHORT).show();
     }
 }

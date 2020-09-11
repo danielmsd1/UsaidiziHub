@@ -32,36 +32,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:onClick="fabMore"
         android:src="@drawable/ic_baseline_menu_24"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline3" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabpublic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:src="@drawable/ic_baseline_person_24"
-        android:visibility="gone"
-        app:layout_constraintCircle="@id/fabmore"
-        app:layout_constraintCircleAngle="335"
-        app:layout_constraintCircleRadius="100dp"
-        tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="559dp" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabchatbot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:src="@drawable/ic_baseline_message_24"
-        android:visibility="gone"
-        app:layout_constraintCircle="@id/fabmore"
-        app:layout_constraintCircleAngle="280"
-        app:layout_constraintCircleRadius="100dp"
-        tools:layout_editor_absoluteX="242dp"
-        tools:layout_editor_absoluteY="625dp" />
 
     <ImageView
         android:id="@+id/imageView2"
