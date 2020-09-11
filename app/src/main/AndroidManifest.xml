@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.simiyu.usaidizihub"
-    >
+    package="com.simiyu.usaidizihub">
 
     <application
         android:allowBackup="true"
@@ -10,46 +9,54 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".DeleteChatroomDialog"
+        <activity android:name=".ClientProgress"
+            android:parentActivityName=".ClientActivity"
             android:screenOrientation="portrait"></activity>
-
-        <activity android:name=".ChatroomActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".ChatActivity"
-            android:screenOrientation="portrait"/>
-
+        <activity
+            android:name=".AllCounselors"
+            android:parentActivityName=".ClientActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AvailableCounselors"
+            android:parentActivityName=".ClientActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DeleteChatroomDialog"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChatroomActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChatActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Policy"
             android:parentActivityName=".ClientActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".UploadDataActivity"
             android:parentActivityName=".Policy"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ApplicationSettings"
             android:label="@string/title_activity_application_settings"
             android:parentActivityName=".ClientActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".AdminstratorActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".CounselorActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AdminstratorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CounselorActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SettingsActivity"
             android:parentActivityName=".ClientActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".Registration"
-            android:screenOrientation="portrait">
-
-        </activity>
-        <activity android:name=".Login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Registration"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Login"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -57,9 +64,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ClientActivity"
-            android:screenOrientation="portrait">
-        </activity>
+        <activity
+            android:name=".ClientActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
