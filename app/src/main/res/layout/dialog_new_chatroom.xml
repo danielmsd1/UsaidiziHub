@@ -14,7 +14,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Chatroom Name:"
-            android:textColor="@android:color/black"
             android:textSize="22sp" />
 
         <EditText
@@ -44,7 +43,6 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:text="Security Level"
-            android:textColor="@android:color/black"
             android:textSize="22sp" />
 
         <SeekBar
@@ -62,7 +60,6 @@
             android:layout_centerHorizontal="true"
             android:textSize="15sp"
             android:layout_marginTop="10dp"
-            android:textColor="@android:color/holo_blue_dark"
             android:id="@+id/security_level"/>
 
     </RelativeLayout>
@@ -75,9 +72,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:background="@color/lightPurple"
         android:text="Create"
-        android:textColor="@color/mainText"
         android:textSize="22sp" />
 
 

@@ -16,8 +16,10 @@
             android:id="@+id/profile_image"
             android:layout_width="293dp"
             android:layout_height="189dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/usaidizihublogo" />
+            android:scaleType="centerCrop"/>
+<!--            android:src="@drawable/usaidizihublogo" -->
+
+
 
         <TextView
             android:layout_width="wrap_content"

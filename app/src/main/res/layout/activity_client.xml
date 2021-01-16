@@ -35,7 +35,6 @@
         android:clickable="true"
         android:onClick="fabMore"
         android:src="@drawable/ic_baseline_menu_24"
-        app:backgroundTint="@color/lightPurple"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline3" />
 
@@ -97,20 +96,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.2" />
 
-    <TextView
-        android:id="@+id/mycategory"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:gravity="center"
-        android:text="Student Module"
-        android:textColor="@color/mainText"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="396dp"
@@ -132,11 +117,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_gravity="fill_horizontal"
-                android:background="@color/lightPurple"
                 android:fontFamily="@font/raleway_semibold"
                 android:onClick="openAvailableCounselors"
                 android:text="Available\ncounselors"
-                android:textColor="@color/mainText"
                 android:textSize="18sp" />
 
             <Button
@@ -145,11 +128,9 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="7dp"
                 android:layout_gravity="fill_horizontal"
-                android:background="@color/lightPurple"
                 android:fontFamily="@font/raleway_semibold"
                 android:onClick="openClientProgress"
                 android:text="Progress\nreport"
-                android:textColor="@color/mainText"
                 android:textSize="18sp" />
 
             <Button
@@ -158,11 +139,9 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="7dp"
                 android:layout_gravity="fill_horizontal"
-                android:background="@color/lightPurple"
                 android:fontFamily="@font/raleway_semibold"
                 android:onClick="openAllCounselors"
                 android:text="Usaidizihub\ncounselors"
-                android:textColor="@color/mainText"
                 android:textSize="18sp" />
 
             <Button
@@ -171,31 +150,28 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="7dp"
                 android:layout_gravity="fill_horizontal"
-                android:background="@color/lightPurple"
                 android:fontFamily="@font/raleway_semibold"
                 android:onClick="openChatroom"
                 android:text="Chatroom"
-                android:textColor="@color/mainText"
                 android:textSize="18sp"
                 tools:ignore="OnClick" />
         </LinearLayout>
 
     </ScrollView>
 
-    <Button
-        android:id="@+id/switch_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/state_switch"
-        android:fontFamily="@font/raleway_semibold"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:text="Enable Dark Mode"
-        android:textAllCaps="false"
-        android:textColor="@color/mainBackground"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
+<!--    <Button-->
+<!--        android:id="@+id/switch_btn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:background="@drawable/state_switch"-->
+<!--        android:fontFamily="@font/raleway_semibold"-->
+<!--        android:paddingLeft="4dp"-->
+<!--        android:paddingRight="4dp"-->
+<!--        android:text="Enable Dark Mode"-->
+<!--        android:textAllCaps="false"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

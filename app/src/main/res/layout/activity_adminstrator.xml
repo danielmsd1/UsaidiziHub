@@ -136,11 +136,9 @@
                 android:layout_column="0"
                 android:layout_columnWeight="50"
                 android:layout_gravity="fill_horizontal"
-                android:background="@color/lightPurple"
                 android:fontFamily="@font/raleway_semibold"
                 android:onClick="add_counselors"
                 android:text="Add\ncounselors"
-                android:textColor="@color/mainText"
                 android:textSize="18sp" />
 
             <Button
@@ -152,10 +150,8 @@
                 android:layout_column="1"
                 android:layout_columnWeight="50"
                 android:layout_gravity="fill_horizontal"
-                android:background="@color/lightPurple"
                 android:fontFamily="@font/raleway_semibold"
                 android:text="Counselor\nreport"
-                android:textColor="@color/mainText"
                 android:textSize="18sp" />
 
             <Button
@@ -167,10 +163,8 @@
                 android:layout_column="0"
                 android:layout_columnWeight="50"
                 android:layout_gravity="fill_horizontal"
-                android:background="@color/lightPurple"
                 android:fontFamily="@font/raleway_semibold"
                 android:text="Usaidizihub\nstudents"
-                android:textColor="@color/mainText"
                 android:textSize="18sp" />
 
             <Button
@@ -182,13 +176,10 @@
                 android:layout_column="1"
                 android:layout_columnWeight="50"
                 android:layout_gravity="fill_horizontal"
-                android:background="@color/lightPurple"
                 android:fontFamily="@font/raleway_semibold"
                 android:text="Chatroom"
-                android:textColor="@color/mainText"
                 android:textSize="18sp" />
         </GridLayout>
-
 
     </ScrollView>
 

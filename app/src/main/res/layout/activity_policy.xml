@@ -94,10 +94,8 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/lightPurple"
                 android:onClick="uploaddata"
-                android:text="Add application"
-                android:textColor="@color/mainText" />
+                android:text="Add application" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
