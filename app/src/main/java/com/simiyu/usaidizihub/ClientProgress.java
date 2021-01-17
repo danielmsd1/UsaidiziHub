@@ -39,9 +39,9 @@ public class ClientProgress extends AppCompatActivity {
         dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         PieData data = new PieData(dataSet);
 
-//        PieChart chart = findViewById(R.id.chart);
-//        chart.setData(data);
-//        chart.animateY(1000);
-//        chart.invalidate();
+        PieChart chart = findViewById(R.id.chart);
+        chart.setData(data);
+        chart.animateY(1000);
+        chart.invalidate();
     }
 }
