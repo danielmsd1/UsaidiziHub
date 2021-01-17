@@ -13,35 +13,12 @@
         android:layout_gravity="center"
         android:background="@drawable/nick" />
 
-    <TextView
-        android:id="@+id/counselorname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/raleway_semibold"
-        android:gravity="center"
-        android:text="Prof. Nick"
-        android:textAlignment="center"
-        android:textColor="@color/mainText"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:fontFamily="@font/raleway_semibold"
-        android:text="Buy card"
-        android:textColor="@color/mainText"
-        android:textSize="22sp" />
-
-    <androidx.appcompat.widget.AppCompatRatingBar
-        android:id="@+id/ratingbar"
-        android:layout_width="190dp"
-        android:rating="5"
-        android:isIndicator="true"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_marginBottom="40dp"/>
+        android:text="Buy Prof. nick"
+        android:textSize="15sp" />
 
 </FrameLayout>
