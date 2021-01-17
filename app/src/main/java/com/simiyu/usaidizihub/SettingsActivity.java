@@ -129,7 +129,7 @@ public class SettingsActivity extends AppCompatActivity implements
                     if(!isEmpty(mEmail.getText().toString())
                             && !isEmpty(mCurrentPassword.getText().toString())){
 
-                        //verify that user is changing to a company email address
+                        //verify that user is changing to school email address
                         if(isValidDomain(mEmail.getText().toString())){
                             editUserEmail();
                         }else{

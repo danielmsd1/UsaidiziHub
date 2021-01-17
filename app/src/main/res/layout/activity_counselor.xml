@@ -109,7 +109,6 @@
                 android:layout_gravity="fill_horizontal"
                 android:fontFamily="@font/raleway_semibold"
                 android:text="Available\nstudents"
-                android:textColor="@color/mainText"
                 android:textSize="18sp" />
 
             <Button
@@ -123,7 +122,6 @@
                 android:layout_gravity="fill_horizontal"
                 android:fontFamily="@font/raleway_semibold"
                 android:text="Progress\nreports"
-                android:textColor="@color/mainText"
                 android:textSize="18sp" />
 
             <Button
@@ -137,7 +135,6 @@
                 android:layout_gravity="fill_horizontal"
                 android:fontFamily="@font/raleway_semibold"
                 android:text="Requests"
-                android:textColor="@color/mainText"
                 android:textSize="18sp" />
 
             <Button
@@ -151,7 +148,6 @@
                 android:layout_gravity="fill_horizontal"
                 android:fontFamily="@font/raleway_semibold"
                 android:text="Chatroom"
-                android:textColor="@color/mainText"
                 android:textSize="18sp" />
         </GridLayout>
 
