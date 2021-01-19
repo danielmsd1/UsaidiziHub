@@ -50,36 +50,6 @@ public class ClientActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client);
 
-        // TODO: 1/17/2021 Dark theme
-/*
- val appSettingPrefs: SharedPreferences = getSharedPreferences("AppSettingPrefs", 0)
-        val sharedPrefsEdit: SharedPreferences.Editor = appSettingPrefs.edit()
-        val isNightModeOn: Boolean = appSettingPrefs.getBoolean("NightMode", false)
-
-        if(isNightModeOn){
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            switch_btn.text = "Disable Dark Mode"
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            switch_btn.text = "Enable Dark Mode"
-        }
-
-        switch_btn.setOnClickListener(View.OnClickListener {
-            if(isNightModeOn){
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                sharedPrefsEdit.putBoolean("NightMode", false)
-                sharedPrefsEdit.apply()
-
-                switch_btn.text = "Enable Dark Mode"
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                sharedPrefsEdit.putBoolean("NightMode", true)
-                sharedPrefsEdit.apply()
-
-                switch_btn.text = "Disable Dark Mode"
-            }
-        })
- */
         //initialize views
         mProgressBar =  findViewById(R.id.progressBar2);
         ftext = findViewById(R.id.fabchatbot);
