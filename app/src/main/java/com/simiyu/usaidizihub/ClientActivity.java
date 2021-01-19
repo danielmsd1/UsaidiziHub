@@ -30,6 +30,7 @@ import io.kommunicate.Kommunicate;
 import io.kommunicate.callbacks.KmCallback;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.simiyu.usaidizihub.models.User;
 import com.simiyu.usaidizihub.utility.UniversalImageLoader;
 
 public class ClientActivity extends AppCompatActivity {
@@ -109,11 +110,19 @@ public class ClientActivity extends AppCompatActivity {
     
     private void setUserDetails(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String userName = user.getDisplayName();
+        String phoneNumber = user.getPhoneNumber();
+        String profileImage = user.getPhotoUrl().toString();
+        String securityLevel = user.getProviderId();
+        String userId = user.getUid();
+
+
+//        User userDetails = new User(userName,phoneNumber,profileImage,securityLevel,userId);
 
         if (user != null){
             UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                    .setDisplayName("Simiyu Daniel")
-                    .setPhotoUri(Uri.parse("https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.usnews.com%2Fdims4%2FUSNEWS%2Ff45ea7c%2F2147483647%2Fthumbnail%2F640x420%2Fquality%2F85%2F%3Furl%3Dhttp%253A%252F%252Fmedia.beam.usnews.com%252Fd1%252Fd8%252F8501ba714a21aed9a7327e02ade1%252F180515-10thingselonmusk-editorial.jpg&imgrefurl=https%3A%2F%2Fwww.usnews.com%2Fnews%2Fnational-news%2Farticles%2F2018-05-24%2F10-things-you-didnt-know-about-elon-musk&tbnid=aFJaMH5wTn0DbM&vet=12ahUKEwig5L6R_tDrAhVJw4UKHWyNBhoQMygWegUIARD7AQ..i&docid=0fZr_NLvm8byIM&w=640&h=420&q=elon%20musk&ved=2ahUKEwig5L6R_tDrAhVJw4UKHWyNBhoQMygWegUIARD7AQ"))
+                    .setDisplayName(userName)
+                    .setPhotoUri(Uri.parse(profileImage))
                     .build();
 
             user.updateProfile(profileUpdates).addOnCompleteListener(new OnCompleteListener<Void>() {
