@@ -86,9 +86,6 @@ public class ClientActivity extends AppCompatActivity {
         String securityLevel = user.getProviderId();
         String userId = user.getUid();
 
-
-//        User userDetails = new User(userName,phoneNumber,profileImage,securityLevel,userId);
-
         if (user != null){
             UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                     .setDisplayName(userName)
@@ -221,7 +218,7 @@ public class ClientActivity extends AppCompatActivity {
         startActivity(intent);
     }
     /*
-            ----------------------------- Firebase setup ---------------------------------
+     ----------------------------- Firebase setup ---------------------------------
          */
     private void setupFirebaseAuth(){
         Log.d(TAG, "setupFirebaseAuth: started.");
@@ -315,12 +312,10 @@ public class ClientActivity extends AppCompatActivity {
             Toast.makeText(this, "Could not open profile", Toast.LENGTH_SHORT).show();
         }
     }
-
     /**
      * Manage fabs
      * Remove from view and make visible
      * */
-
     private void showFabs(){
         ftext.setVisibility(View.VISIBLE);
         fprofile.setVisibility(View.VISIBLE);
@@ -340,7 +335,6 @@ public class ClientActivity extends AppCompatActivity {
             }
         }
     }
-
 
     public void openChatroom(View view) {
         Intent intent;
